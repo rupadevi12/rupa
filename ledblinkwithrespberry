@@ -1,0 +1,16 @@
+from machine import Pin
+import utime
+
+# Define the pin number where the LED is connected
+led_pin = Pin(5, Pin.OUT)
+
+# Function to toggle LED state
+def toggle_led():
+    led_pin.value(not led_pin.value())
+
+# Main loop to blink the LED
+while True:
+    toggle_led()  # Turn the LED on
+    utime.sleep(1)  # Wait for 1 second
+    toggle_led()  # Turn the LED off
+    utime.sleep(1)  # Wait for 1 second
